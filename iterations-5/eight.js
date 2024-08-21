@@ -32,4 +32,4 @@ const shoppingCart = [
 ];
 
 const totalBill = shoppingCart.reduce((acc, item) => acc + item.price, 0);
-console.log(`Total Cart bill yo pay : ${totalBill}`);
+console.log(`Total Cart bill yo pay : ${totalBill``}`);
