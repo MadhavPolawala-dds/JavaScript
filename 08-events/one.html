@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events</title>
+  </head>
+  <style>
+    img {
+      width: 243px;
+      height: auto;
+    }
+  </style>
+  <body>
+    <ul id="images">
+      <li><img src="../assets/images/gun.png" alt="" id="gun" /></li>
+      <li><img src="../assets/images/tower.webp" alt="" id="tower" /></li>
+      <li><img src="../assets/images/road.jpg" alt="" id="road" /></li>
+    </ul>
+  </body>
+  <script>
+    document.getElementById("gun").addEventListener("click", function (e) {
+      console.log(
+        "Time : " +
+          Math.floor(e.timeStamp / 1000) + //Timestamp
+          " seconds after entering the webpage"
+      );
+    });
+
+    document.getElementById("tower").addEventListener("click", function () {});
+
+    document.getElementById("road").addEventListener("click", function () {});
+
+    document.getElementById("images").addEventListener("click", function (e) {
+      console.log(e.target.tagName);
+      let parentNodeOfImage = e.target.parentNode;
+      if (e.target.tagName === "IMG") {
+        console.log(e.target.id);
+
+        parentNodeOfImage.remove();
+      }
+    });
+  </script>
+</html>
