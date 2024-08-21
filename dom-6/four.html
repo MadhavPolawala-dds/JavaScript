@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript</title>
+  </head>
+  <body>
+    <ul class="language">
+      <li>JavaScript</li>
+    </ul>
+  </body>
+  <script>
+    function addLanguage(langName) {
+      const li = document.createElement("li");
+      li.innerHTML = `${langName}`;
+      document.querySelector(".language").appendChild(li);
+    }
+
+    addLanguage("HTML");
+    addLanguage("CSS");
+
+    function addOptimizedLanguage(langName) {
+      const li = document.createElement("li");
+      li.appendChild(document.createTextNode(langName));
+      document.querySelector(".language").appendChild(li);
+    }
+
+    addOptimizedLanguage("Angular");
+    addOptimizedLanguage("React");
+
+    //edit child
+
+    const secondLang = document.querySelector("li:nth-child(2)");
+    // secondLang.innerHTML = "Python";
+    const newLi = document.createElement("li");
+    newLi.textContent = "Python";
+    secondLang.replaceWith(newLi);
+
+    const firstLang = document.querySelector("li:nth-child(1)");
+    const newLang = document.createElement("li");
+    newLang.textContent = "TypeScript";
+    firstLang.replaceWith(newLang);
+
+    const lastLang = document.querySelector("li:last-child");
+    lastLang.outerHTML = "<li>Java</li>";
+
+    //Remove child
+
+    const removeLang = document.querySelector("li:nth-child(3)");
+    removeLang.remove();
+  </script>
+</html>
